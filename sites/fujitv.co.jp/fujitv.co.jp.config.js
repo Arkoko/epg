@@ -1,7 +1,7 @@
 const dayjs = require('dayjs')
 
 module.exports = {
-  site: 'www3.nhk.or.jp',
+  site: 'fujitv.co.jp',
   days: 5,
   lang: 'jp',
   delay: 5000,
