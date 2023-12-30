@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<channels>
+  <channel site="tv-tokyo.co.jp" lang="jp" xmltv_id="BSTVTokyo.jp" site_id="bs-tv-tokyo">TV-Tokyo BS</channel>
+  <channel site="tv-tokyo.co.jp" lang="jp" xmltv_id="BSTVTokyo.jp" site_id="bs-tv-tokyo-4k">TV-Tokyo BS4K</channel>
+  <channel site="tv-tokyo.co.jp" lang="jp" xmltv_id="JOTXDTV.jp" site_id="tv-tokyo">TV-Tokyo</channel>
+</channels>
