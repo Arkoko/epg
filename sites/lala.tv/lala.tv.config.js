@@ -2,7 +2,7 @@ const dayjs = require('dayjs')
 
 module.exports = {
   site: 'lala.tv',
-  days: 1,
+  days: 5,
   lang: 'jp',
   delay: 5000,
 
@@ -59,11 +59,19 @@ function parseItems({content, date}) {
 }
 
 function parseStart(item, date) {
+
   return getDayjsTime( item, 'ps_start_time', date)
 }
 
 function parseStop(item, date) {
-  return getDayjsTime( item, 'ps_end_time', date)
+  //let starthr = parseInt(item['ps_start_time'].split(':')[0])
+  let endhr = parseInt(item['ps_end_time'].split(':')[0])
+  let enddate = date
+  if(endhr > 23){
+    enddate = date +1
+  }
+  //console.log('start: '+starthr + ' end: '+ endhr+ ' | '+enddate)
+  return getDayjsTime( item, 'ps_end_time', enddate)
 }
 
 function parseIcon(item) {
@@ -71,5 +79,14 @@ function parseIcon(item) {
 }
 
 function getDayjsTime(item, attribute, date){
-  return dayjs(date + 'T'+item[attribute]+':00+09:00')
+  let starthr = parseInt(item[attribute].split(':')[0])
+  let min = parseInt(item[attribute].split(':')[1])
+  let startdate = dayjs(date)
+  if(starthr > 23){
+    startdate = startdate.add(1,'day')
+    starthr -= 24
+    //console.log(startdate + ' '+ starthr)
+  }
+  return dayjs(startdate).add(starthr, 'hours').add(min,'minute').utcOffset(9)
+  //return dayjs(startdate + 'T'+item[attribute]+':00+09:00')
 }

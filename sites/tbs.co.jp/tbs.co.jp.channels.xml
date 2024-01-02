@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<channels>
+  <!--<channel site="fujitv.co.jp" lang="jp" xmltv_id="BSFuji.jp" site_id="g1">Fuji TV BS</channel>-->
+  <channel site="tbs.co.jp" lang="jp" xmltv_id="JORXDTV.jp" site_id="g1">TBS</channel>
+</channels>

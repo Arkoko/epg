@@ -66,5 +66,17 @@ function parseIcon(item) {
 }
 
 function getDayjsObj(item, attribute){
-  return dayjs((item[attribute].substring(0,19)).concat('+09:00'))
+  let dt = item[attribute].split('T')
+  let hr = parseInt(dt[1].split(':')[0])
+  let min = parseInt(dt[1].split(':')[1])
+  let date = dt[0]
+  //console.log(date+' '+ hr + ' '+ min)
+  //console.log(item[attribute])
+  if(hr > 23){
+    date = dayjs(date).add(1,'day')
+    hr -= 24
+  }
+  return dayjs(date).add(hr, 'hours').add(min,'minute').utcOffset(9)
+  //return dayjs((item[attribute].substring(0,19)).concat('+09:00'))
+  //return dayjs(date + 'T'+item[attribute]+':00+09:00')
 }
