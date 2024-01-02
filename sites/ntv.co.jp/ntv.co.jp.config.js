@@ -30,7 +30,7 @@ module.exports = {
       let startTime = getTime(item, 'start_time')
       let endTime = getTime(item, 'end_time')
       if(endTime.isBefore(startTime)){
-        endTime.add(1, 'day')
+        endTime = endTime.add(1, 'day')
       }
       programs.push({
         title: item.program_title,
