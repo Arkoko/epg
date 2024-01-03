@@ -67,7 +67,9 @@ function parseItems({content, date}) {
   })
 
   let i = items.length-1
-  items[i].endTime = dayjs(items[i].startTime).set('hour', 6).set('minute', 0)
+  items[i].endTime = dayjs(items[i].startTime.format('YYYY-MM-DD')).hour(6).minute(0).utcOffset(9)
+  
+  // set end time of previous program
   while(--i>=0){
     items[i].endTime = items[i+1].startTime
   }
