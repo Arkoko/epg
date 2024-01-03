@@ -1,4 +1,12 @@
 const dayjs = require('dayjs')
+const utc = require('dayjs/plugin/utc')
+const timezone = require('dayjs/plugin/timezone')
+const customParseFormat = require('dayjs/plugin/customParseFormat')
+
+dayjs.extend(utc)
+dayjs.extend(timezone)
+dayjs.extend(customParseFormat)
+
 const cheerio = require('cheerio')
 
 module.exports = {
@@ -80,5 +88,5 @@ function getImage(item){
 }
 
 function getTime(time){
-  return dayjs(time).utcOffset(9)
+  return dayjs.tz(time, 'Asia/Tokyo')
 }

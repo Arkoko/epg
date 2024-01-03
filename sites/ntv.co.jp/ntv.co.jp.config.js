@@ -1,4 +1,11 @@
 const dayjs = require('dayjs')
+const utc = require('dayjs/plugin/utc')
+const timezone = require('dayjs/plugin/timezone')
+const customParseFormat = require('dayjs/plugin/customParseFormat')
+
+dayjs.extend(utc)
+dayjs.extend(timezone)
+dayjs.extend(customParseFormat)
 
 module.exports = {
   site: 'ntv.co.jp',
@@ -25,7 +32,6 @@ module.exports = {
   parser: function (context, channel) {
     const programs = []
     const items = parseItems(context, channel)
-    console.log('items.length: '+items.length)
     items.forEach(item => {
       let startTime = getTime(item, 'start_time')
       let endTime = getTime(item, 'end_time')
@@ -41,7 +47,7 @@ module.exports = {
         sub_title: item.program_detail
       })
     })
-    //console.log(programs)
+    
     return programs
   }
 }
@@ -51,11 +57,11 @@ function parseItems({content, date}) {
     return []
   
   const data = JSON.parse(content.substring(1))
-  //console.log('parseitem end...['+ data+']')
+  
   if(!data || !Array.isArray(data))
     return []
   let datestr = dayjs(date).format('YYYYMMDD')
-  //console.log(datestr + ' - '+ data[0].broadcast_date)
+  
   return data.filter( a =>{
     return a.broadcast_date === datestr 
   })
@@ -66,7 +72,5 @@ function getTime(item, timestr) {
   let date = item.actual_datetime
   let broadcast_date = date.broadcast_date
   let time = date[timestr]
-  //console.log(date)
-  //let datestr = [broadcast_date.substring(0,4), broadcast_date.substring(4,2), broadcast_date.substring(6)].join('-')
-  return dayjs(broadcast_date+'T'+time+':00').utcOffset(9)
+  return dayjs.tz(broadcast_date+'T'+time, 'Asia/Tokyo')
 }

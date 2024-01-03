@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<channels>
+  <channel site="api.nhk.or.jp" lang="jp" xmltv_id="JOAKDTV.jp" site_id="g1">NHK G (Tokyo)</channel>
+  <channel site="api.nhk.or.jp" lang="jp" xmltv_id="JOBKDTV.jp" site_id="g1">NHK G (Osaka)</channel>
+  <channel site="api.nhk.or.jp" lang="jp" xmltv_id="JOABDTV.jp" site_id="e1">NHK E</channel>
+  <channel site="api.nhk.or.jp" lang="jp" xmltv_id="NHKBS.jp" site_id="s1">NHK BS</channel>
+  <channel site="api.nhk.or.jp" lang="jp" xmltv_id="NHKBSP4K.jp" site_id="s5">NHK BSP4K</channel>
+  
+  <channel site="tv-tokyo.co.jp" lang="jp" xmltv_id="BSTVTokyo.jp" site_id="bs-tv-tokyo">TV-Tokyo BS</channel>
+  <channel site="tv-tokyo.co.jp" lang="jp" xmltv_id="BSTVTokyo.jp" site_id="bs-tv-tokyo-4k">TV-Tokyo BS4K</channel>
+  <channel site="tv-tokyo.co.jp" lang="jp" xmltv_id="JOTXDTV.jp" site_id="tv-tokyo">TV-Tokyo</channel>
+
+  <!--<channel site="fujitv.co.jp" lang="jp" xmltv_id="BSFuji.jp" site_id="g1">Fuji TV BS</channel>-->
+  <channel site="fujitv.co.jp" lang="jp" xmltv_id="JOCXDTV.jp" site_id="0">Fuji TV</channel>
+
+  <channel site="lala.tv" lang="jp" xmltv_id="LaLaTV.jp" site_id="g1">Lala TV</channel>
+
+  <channel site="animax.co.jp" lang="jp" xmltv_id="Animax.jp" site_id="0">Animax JP</channel>
+  <channel site="ntv.co.jp" lang="jp" xmltv_id="JOAXDTV.jp" site_id="0">Nippon TV</channel>
+  <channel site="tbs.co.jp" lang="jp" xmltv_id="JORXDTV.jp" site_id="g1">TBS</channel>
+
+  <channel site="tv-asahi.co.jp" lang="jp" xmltv_id="JOEXDTV.jp" site_id="0">TV-Asahi</channel>
+</channels>

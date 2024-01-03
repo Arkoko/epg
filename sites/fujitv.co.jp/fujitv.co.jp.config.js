@@ -1,5 +1,13 @@
 const dayjs = require('dayjs')
 
+const utc = require('dayjs/plugin/utc')
+const timezone = require('dayjs/plugin/timezone')
+const customParseFormat = require('dayjs/plugin/customParseFormat')
+
+dayjs.extend(utc)
+dayjs.extend(timezone)
+dayjs.extend(customParseFormat)
+
 module.exports = {
   site: 'fujitv.co.jp',
   days: 5,
@@ -69,14 +77,15 @@ function getDayjsObj(item, attribute){
   let dt = item[attribute].split('T')
   let hr = parseInt(dt[1].split(':')[0])
   let min = parseInt(dt[1].split(':')[1])
-  let date = dt[0]
+  let nextDay = 0
   //console.log(date+' '+ hr + ' '+ min)
   //console.log(item[attribute])
   if(hr > 23){
-    date = dayjs(date).add(1,'day')
+    nextDay = 1
     hr -= 24
   }
-  return dayjs(date).add(hr, 'hours').add(min,'minute').utcOffset(9)
+  let date = dayjs.tz(dt[0]+' '+hr+':'+min, 'Asia/Tokyo').add(nextDay, 'day')
+  return date //date.add(hr, 'hours').add(min,'minute')
   //return dayjs((item[attribute].substring(0,19)).concat('+09:00'))
   //return dayjs(date + 'T'+item[attribute]+':00+09:00')
 }

@@ -1,6 +1,14 @@
 const dayjs = require('dayjs')
 const cheerio = require('cheerio')
 
+const utc = require('dayjs/plugin/utc')
+const timezone = require('dayjs/plugin/timezone')
+const customParseFormat = require('dayjs/plugin/customParseFormat')
+
+dayjs.extend(utc)
+dayjs.extend(timezone)
+dayjs.extend(customParseFormat)
+
 module.exports = {
   site: 'www3.nhk.or.jp',
   days: 5,
@@ -67,7 +75,7 @@ function parseItems({content, date}) {
   })
 
   let i = items.length-1
-  items[i].endTime = dayjs(items[i].startTime.format('YYYY-MM-DD')).hour(6).minute(0).utcOffset(9)
+  items[i].endTime = dayjs.tz(items[i].startTime.format('YYYY-MM-DD') + ' 06:00', 'Asia/Tokyo')
   
   // set end time of previous program
   while(--i>=0){
@@ -82,13 +90,12 @@ function getStartTime(str, date){
   let month = dt[0].split('月')[0]
   let day = dt[0].split('月')[1].split('日')[0]
   let year = parseInt(date.format('YYYY')) 
-  let _date = dayjs(year+'-'+month+'-'+day)
-  year += parseInt(month) < parseInt(date.format('MM')) ? 1:0
-  let dt1 = dt[1].replace(/(\r\n|\n|\r)/gm, '')
-  let time = dt1.split(':')
-  //dt1 = dt1.length == 5? dt1:'0'+dt1
-  //let datestr = (year + '-' + month + '-' + day + 'T' + dt1 + ':00+09:00').replace(/(\r\n|\n|\r)/gm, '')
-  //console.log(_date.toString()+' T '+ time)
-  return dayjs(_date).add(parseInt(time[0]), 'hours').add(parseInt(time[1]), 'minute').utcOffset(9)
+  day = (day.length == 1? '0':'')+ day
+  month = (month.length == 1? '0':'')+ month
+  let datestr = removeNewLine(year+'-'+month+'-'+day+' '+dt[1])
+  return dayjs.tz(datestr, 'Asia/Tokyo')
 }
 
+function removeNewLine(str){
+  return str.replace(/(\r\n|\n|\r)/gm, '')
+}
