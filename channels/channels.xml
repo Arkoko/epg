@@ -7,7 +7,7 @@
   <channel site="api.nhk.or.jp" lang="jp" xmltv_id="NHKBSP4K.jp" site_id="s5">NHK BSP4K</channel>
   
   <channel site="tv-tokyo.co.jp" lang="jp" xmltv_id="BSTVTokyo.jp" site_id="bs-tv-tokyo">TV-Tokyo BS</channel>
-  <channel site="tv-tokyo.co.jp" lang="jp" xmltv_id="BSTVTokyo.jp" site_id="bs-tv-tokyo-4k">TV-Tokyo BS4K</channel>
+  <!--<channel site="tv-tokyo.co.jp" lang="jp" xmltv_id="BSTVTokyo.jp" site_id="bs-tv-tokyo-4k">TV-Tokyo BS4K</channel>-->
   <channel site="tv-tokyo.co.jp" lang="jp" xmltv_id="JOTXDTV.jp" site_id="tv-tokyo">TV-Tokyo</channel>
 
   <!--<channel site="fujitv.co.jp" lang="jp" xmltv_id="BSFuji.jp" site_id="g1">Fuji TV BS</channel>-->
