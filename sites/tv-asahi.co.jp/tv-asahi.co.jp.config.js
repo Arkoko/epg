@@ -93,6 +93,9 @@ function parseItems({
 
   // set end time of previous program
   for (let i = 0; i < items.length - 1; i++) {
+    if(items[i].endTime === items[i + 1].startTime){
+      continue
+    }
     items[i].endTime = items[i + 1].startTime
   }
 
