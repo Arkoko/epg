@@ -134,4 +134,8 @@
   <channel site="tvguide.myjcom.jp" lang="ja" xmltv_id="" site_id="120_415_65527">JSPORTS4 (4K)</channel>
   <channel site="tvguide.myjcom.jp" lang="ja" xmltv_id="" site_id="120_416_65527">ショップチャンネル ４Ｋ</channel>
   <channel site="tvguide.myjcom.jp" lang="ja" xmltv_id="" site_id="120_417_65527">4Ｋ QVC</channel>
+
+  <channel site="tvguide.myjcom.jp" lang="ja" xmltv_id="JODXDTV.jp" site_id="2_2080_32724">関西テレビ</channel>
+  <channel site="tvguide.myjcom.jp" lang="ja" xmltv_id="JOBHDTV.jp" site_id="2_41008_32118">テレビ大阪</channel>
+  
 </channels>
