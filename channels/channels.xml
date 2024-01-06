@@ -5,6 +5,8 @@
   <channel site="api.nhk.or.jp" lang="jp" xmltv_id="JOABDTV.jp" site_id="e1">NHK E</channel>
   <channel site="api.nhk.or.jp" lang="jp" xmltv_id="NHKBS.jp" site_id="s1">NHK BS</channel>
   <channel site="api.nhk.or.jp" lang="jp" xmltv_id="NHKBSP4K.jp" site_id="s5">NHK BSP4K</channel>
+  <channel site="tvguide.myjcom.jp" lang="ja" xmltv_id="JODXDTV.jp" site_id="2_2080_32724">関西テレビ</channel>
+  <channel site="tvguide.myjcom.jp" lang="ja" xmltv_id="JOBHDTV.jp" site_id="2_41008_32118">テレビ大阪</channel>
   
   <!--<channel site="tv-tokyo.co.jp" lang="jp" xmltv_id="BSTVTokyo.jp" site_id="bs-tv-tokyo">TV-Tokyo BS</channel>-->
   <!--<channel site="tv-tokyo.co.jp" lang="jp" xmltv_id="BSTVTokyo.jp" site_id="bs-tv-tokyo-4k">TV-Tokyo BS4K</channel>-->
